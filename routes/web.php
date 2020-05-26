@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TaskController@index')->name('tasks,index');
 
+Route::post('/task', 'TaskController@store')->name('tasks.store'); 
 
