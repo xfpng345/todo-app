@@ -20,3 +20,9 @@ Route::get('/', 'TaskController@index')->name('tasks,index');
 
 Route::post('/task', 'TaskController@store')->name('tasks.store'); 
 
+Route::delete('/task/{task}', function(Task $task){
+    $task->delete();
+
+    return redirect('/');
+});
+
