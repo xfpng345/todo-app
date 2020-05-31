@@ -41,7 +41,7 @@
 							<tbody>
 								@foreach ($tasks as $task)
 									<tr>
-										<td class="table-text"><div>{{ $task->title }}</div></td>
+										<td class="table-text"><div>{{ $task->user->name }}</div><div>{{ $task->title }}</div></td>
 										@auth
 											@if( ( $task->user_id ) == ( Auth::user()->id ) )
 												<td>
