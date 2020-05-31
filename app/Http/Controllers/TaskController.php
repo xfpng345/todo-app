@@ -31,6 +31,7 @@ class TaskController extends Controller
 
         $task = new Task;
         $task->title = $request->name;
+        $task->user_id = $request->user()->id;
         $task->save();
     
         return redirect('/');
