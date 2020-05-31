@@ -42,15 +42,19 @@
 								@foreach ($tasks as $task)
 									<tr>
 										<td class="table-text"><div>{{ $task->title }}</div></td>
-										<td>
-											<form action="/task/{{ $task->id }}" method="POST">
-												{{ csrf_field() }}
-												{{ method_field('DELETE') }}
-												<button type="submit" class="btn btn-danger">
-													<i class="fa fa-trash"></i>削除
-												</button>
-											</form>
-										</td>
+										@auth
+											@if( ( $task->user_id ) == ( Auth::user()->id ) )
+												<td>
+													<form action="/task/{{ $task->id }}" method="POST">
+														{{ csrf_field() }}
+														{{ method_field('DELETE') }}
+														<button type="submit" class="btn btn-danger">
+															<i class="fa fa-trash"></i>削除
+														</button>
+													</form>
+												</td>
+											@endif
+										@endauth
 									</tr>
 								@endforeach
 							</tbody>
