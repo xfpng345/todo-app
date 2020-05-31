@@ -21,7 +21,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-        'name' => 'required|max:30',
+        'title' => 'required|max:30',
         ]);
         if ($validator->fails()) {
         return redirect('/')
@@ -30,7 +30,7 @@ class TaskController extends Controller
         }
 
         $task = new Task;
-        $task->title = $request->name;
+        $task->title = $request->title;
         $task->user_id = $request->user()->id;
         $task->save();
     

@@ -14,7 +14,7 @@
 						<div class="form-group">
 							<label for="task-name" class="col-sm-3 control-label"></label>
 							<div class="col-sm-6">
-								<input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
+								<input type="text" name="title" id="task-name" class="form-control" value="{{ old('task') }}">
 							</div>
 						</div>
 						<div class="form-group">
