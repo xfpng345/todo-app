@@ -18,12 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TaskController@index')->name('tasks,index');
 
-Route::post('/task', 'TaskController@store')->name('tasks.store'); 
+Route::group(['middleware' => 'auth'], function() {
 
-Route::delete('/task/{task}', function(Task $task){
-    $task->delete();
+    Route::post('/task', 'TaskController@store')->name('tasks.store');
 
-    return redirect('/');
+    Route::delete('/task/{task}', function(Task $task){
+        $task->delete();
+    
+        return redirect('/');
+    });
+
 });
 
 Auth::routes();
