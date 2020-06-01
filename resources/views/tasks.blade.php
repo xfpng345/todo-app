@@ -27,6 +27,16 @@
 					</form>
 				</div>
 			</div>
+			<h4>検索</h4>
+				<form action="{{url('/')}}" method="GET" class="form-horizontal">
+					{{ csrf_field() }}
+					<div class="form-group">
+						<div class="col-sm-6">
+							<input type="text" name="keyword" value="{{ $keyword ?? '' }}" class="form-control">
+							<input type="submit" value="検索">
+						</div>
+					</div>
+				</form>
 			@if (count($tasks) > 0)
 				<div class="panel panel-default">
 					<div class="panel-heading">
