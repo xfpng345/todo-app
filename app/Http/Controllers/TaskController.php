@@ -12,7 +12,6 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        \Debugbar::info($tasks);
 
         return view('tasks',['tasks' => $tasks ]);
 
