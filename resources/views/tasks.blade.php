@@ -5,7 +5,7 @@
 		<div class="col-sm-offset-2 col-sm-8">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					トレーニングを追加する
+				<h4>作成</h4>
 				</div>
 				<div class="panel-body">
 					@include('commons.errors')
@@ -20,7 +20,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-6">
 								<button type="submit" class="btn btn-default">
-									<i class="fa fa-plus"></i>トレーニングを追加する
+									<i class="fa fa-plus"></i><p>トレーニングを追加する</p>
 								</button>
 							</div>
 						</div>
