@@ -9,9 +9,17 @@ use Validator;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $tasks = Task::all();
+
+        // 検索機能
+        $keyword = $request->keyword;
+        if (!empty($keyword)) {
+            $query = Task::where('title','like', '%'.$keyword.'%');
+            $tasks = $query->get();
+        }
+
 
         return view('tasks',['tasks' => $tasks ]);
 
