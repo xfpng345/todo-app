@@ -55,7 +55,12 @@
 							<tbody>
 								@foreach ($tasks as $task)
 									<tr>
-										<td class="table-text"><div>{{ $task->user->name }}</div><div>{{ $task->title }}</div></td>
+										<td class="table-text">
+											<a href="{{ action('UserController@show', $task->user_id) }}">
+												<div>{{ $task->user->name }}</div>
+											</a>
+											<div>{{ $task->title }}</div>
+										</td>
 										@auth
 											@if( ( $task->user_id ) == ( Auth::user()->id ) )
 												<td>
