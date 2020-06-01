@@ -7,9 +7,9 @@
 			<div class="panel panel-default">
         @auth
           @if( ( $user->id ) == ( Auth::user()->id ) )
-          <div class="panel-heading">
-				    <h4>作成</h4>
-				  </div>
+            <div class="panel-heading">
+              <h4>作成</h4>
+            </div>
             <div class="panel-body">
               @include('commons.errors')
               <form action="/task" method="POST" class="form-horizontal">
