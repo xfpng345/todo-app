@@ -19,7 +19,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-6">
-								<button type="submit" class="btn btn-default">
+								<button type="submit" class="btn btn-primary">
 									<i class="fa fa-plus"></i>トレーニングを追加する
 								</button>
 							</div>
@@ -33,7 +33,11 @@
 					<div class="form-group">
 						<div class="col-sm-6">
 							<input type="text" name="keyword" value="{{ $keyword ?? '' }}" class="form-control">
-							<input type="submit" value="検索">
+						</div>
+				</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-6">
+						<input type="submit" value="検索" class="btn btn-primary">
 						</div>
 					</div>
 				</form>
