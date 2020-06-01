@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/task/{task}', function(Task $task){
         $task->delete();
     
-        return redirect('/');
+        return back();
     });
 
 });
