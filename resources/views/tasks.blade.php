@@ -60,6 +60,7 @@
 												<div>{{ $task->user->name }}</div>
 											</a>
 											<div>{{ $task->title }}</div>
+											<p>{{ $task->created_at }}</p>
 										</td>
 										@auth
 											@if( ( $task->user_id ) == ( Auth::user()->id ) )
