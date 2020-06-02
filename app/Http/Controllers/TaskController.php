@@ -11,12 +11,13 @@ class TaskController extends Controller
 {
     public function index(Request $request)
     {
-        $tasks = Task::all();
+        $tasks = Task::all()->sortByDesc('created_at');
 
         // 検索機能
         $keyword = $request->keyword;
         if (!empty($keyword)) {
-            $query = Task::where('title','like', '%'.$keyword.'%');
+            $query = Task::where('title','like', '%'.$keyword.'%')
+            ->orderBy('created_at', 'desc');
             $tasks = $query->get();
         }
 
