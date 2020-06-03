@@ -22,11 +22,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::post('/task', 'TaskController@store')->name('tasks.store');
 
-    Route::delete('/task/{task}', function(Task $task){
-        $task->delete();
-    
-        return back();
-    });
+    Route::delete('/task/{task}', 'TaskController@destroy')->name('tasks.destroy');
 
 });
 

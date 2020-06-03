@@ -45,4 +45,12 @@ class TaskController extends Controller
         return back();
 
     }
+
+    public function destroy($id)
+    {
+        $task = Task::find($id);
+        $task->delete();
+    
+        return back();
+    }
 }
